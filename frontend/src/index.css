@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #FFF8F3;
+  /* Soft Cream */
+  --color-primary-text: #1F2937;
+  --color-mint: #6EE7B7;
+  --color-peach: #FFB4A2;
+  --color-lavender: #CDB4DB;
+  --color-sky: #A0E7E5;
+  --color-pink: #FF8FAB;
+  --color-butter: #FFF3B0;
+
+  --color-primary: var(--color-mint);
+  --color-secondary: var(--color-peach);
+  --color-accent: var(--color-lavender);
+
+  --font-sans: "Outfit", "Inter", sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 8s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 2s infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  background-image:
+    radial-gradient(circle at 30% 30%, #FFE5EC, transparent),
+    radial-gradient(circle at 70% 70%, #D8FFF5, transparent);
+  background-attachment: fixed;
+  color: var(--color-primary-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Lively & Fresh Card Styling */
+.glass {
+  background: #FFFFFF;
+  border: 1px solid #F1F5F9;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  /* Optional, for a touch of depth */
+}
+
+.glass-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-sky);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Playful Gradient Text - Peach to Mint */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-peach) 10%, var(--color-mint) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* New Gradient - Sky to Lavender */
+.gradient-text-alt {
+  background: linear-gradient(135deg, var(--color-sky) 10%, var(--color-lavender) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-3d {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
+  letter-spacing: -0.04em;
+}
+
+.bg-blob {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.3;
+}
